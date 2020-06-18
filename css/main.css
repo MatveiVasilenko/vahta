@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap");
 :root {
   --blue: #007bff;
   --indigo: #6610f2;
@@ -7449,10 +7449,12 @@ a {
   a:hover {
     text-decoration: none; }
 
-.section--first {
-  height: 100vh; }
+.section {
+  padding: 30px 0; }
+  .section--first {
+    height: 100vh; }
 
-.btns-first {
+.btns-first, .btns-second {
   font-size: 20px;
   font-weight: 500;
   padding: 10px 20px;
@@ -7468,12 +7470,56 @@ a {
     background: transparent;
     color: #fff; }
 
+.btns-hover-light:hover {
+  color: #000; }
+
+.btns-second {
+  color: #000;
+  border: 2px solid #000;
+  margin: 15px 0;
+  background: #ffFF00; }
+  .btns-second:hover, .btns-second:focus {
+    background: #fff; }
+
+.title {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 10px;
+  -webkit-clip-path: polygon(4% 0, 100% 0, 97% 100%, 0 90%);
+          clip-path: polygon(4% 0, 100% 0, 97% 100%, 0 90%);
+  background: #ffFF00;
+  width: 250px; }
+  .title--center {
+    width: 100%;
+    text-align: center;
+    -webkit-clip-path: none;
+            clip-path: none;
+    background: linear-gradient(to right, rgba(255, 255, 0, 0) 0%, yellow 25%, yellow 75%, rgba(255, 255, 0, 0)); }
+
+.fw {
+  font-weight: 400; }
+
+.fw500 {
+  font-size: 500px; }
+
+.fw700 {
+  font-weight: 700; }
+
+.font--little {
+  font-size: 22px; }
+
+.font--middle {
+  font-size: 30px; }
+
+.color {
+  color: #ffFF00; }
+
 .header {
   background: transparent; }
 
 .menu {
   color: #fff;
-  padding: 20px 0;
+  padding: 15px 0;
   background: transparent; }
 
 .logo {
@@ -7505,3 +7551,153 @@ a {
   .first__subtitle {
     font-size: 35px;
     margin: 10px 0; }
+
+.whyus__card {
+  font-weight: 700;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 30px; }
+
+.how-title {
+  font-weight: 600;
+  font-size: 30px; }
+  .how-title__effect {
+    background: #ffFF00;
+    -webkit-clip-path: polygon(0 0, 98% 2%, 100% 100%, 2% 100%);
+            clip-path: polygon(0 0, 98% 2%, 100% 100%, 2% 100%); }
+
+.about {
+  position: relative;
+  font-weight: 500;
+  margin: 10px 0; }
+  .about:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -30px;
+    width: 15px;
+    height: 15px;
+    background: #fff;
+    transform: rotateZ(45deg) translateX(-50%); }
+
+.kpi {
+  text-align: center;
+  margin: 30px 0; }
+  .kpi__item {
+    font-weight: 700;
+    font-size: 20px;
+    margin-top: 10px; }
+
+.services {
+  margin: 30px 0; }
+  .services__item {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    padding: 25px 20px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: 0.2s all linear; }
+    .services__item__price {
+      padding-bottom: 15px;
+      font-weight: 600;
+      font-size: 30px; }
+    .services__item__paket {
+      font-weight: 700;
+      font-size: 32px;
+      margin-bottom: 10px; }
+    .services__item__lisp {
+      position: relative;
+      padding: 5px 0; }
+      .services__item__lisp:before {
+        content: '';
+        position: absolute;
+        top: 50%;
+        left: 0px;
+        width: 7px;
+        height: 7px;
+        background: #ffFF00;
+        transform: rotateZ(45deg) translateX(-50%); }
+    .services__item:hover {
+      box-shadow: 0 0 10px yellow; }
+
+.constructor__title {
+  font-weight: 600;
+  font-size: 25px;
+  margin-bottom: 15px; }
+
+.constructor__price {
+  font-size: 500;
+  font-size: 30px; }
+
+.forms {
+  margin: 20px 0; }
+
+/* Customize the label (the container) */
+.forms__item {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 22px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; }
+
+/* Hide the browser's default checkbox */
+.forms__item input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0; }
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 50%;
+  transform: translate(0, -50%);
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #fff;
+  transition: 0.2s all linear; }
+
+/* On mouse-over, add a grey background color */
+.forms__item:hover input ~ .checkmark {
+  background-color: #eee; }
+
+/* When the checkbox is checked, add a blue background */
+.forms__item input:checked ~ .checkmark {
+  background-color: #000D80; }
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  left: 4px;
+  top: 0px;
+  width: 15px;
+  height: 20px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
+  display: none; }
+
+/* Show the checkmark when checked */
+.forms__item input:checked + .checkmark:after {
+  display: block; }
+
+.portfolio {
+  color: #fff; }
+  .portfolio__slide {
+    padding: 30px 0;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 500px; }
+    .portfolio__slide__name {
+      font-size: 30px;
+      font-weight: 700; }

@@ -21374,3 +21374,25 @@ return Popper;
 //   		]
 // 	});
 // });
+//Slick slider
+$(document).ready(function(){
+	$('.portfolio').slick({
+		dots: true,
+		arrows: true,
+		slidesToShow: 1,
+		slidesToScroll: 1
+	});	
+});
+
+//Scroll menu
+$(document).ready(function(){
+	var wnd = $(window)
+	var menu = $('.navbar')
+
+	wnd.scroll(function (){
+		var top = wnd.scrollTop()
+		bg = top > 50 ? '#000' : 'transparent'
+
+		menu.css('backgroundColor', bg)
+	})
+});
