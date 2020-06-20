@@ -7469,6 +7469,9 @@ a {
   .btns-first:hover, .btns-first:focus {
     background: transparent;
     color: #fff; }
+  .btns-first--form:hover, .btns-first--form:focus {
+    background: transparent;
+    color: #000; }
 
 .btns-hover-light:hover {
   color: #000; }
@@ -7480,6 +7483,13 @@ a {
   background: #ffFF00; }
   .btns-second:hover, .btns-second:focus {
     background: #fff; }
+
+.btns-google {
+  display: block;
+  width: 150px;
+  margin: 20px 0; }
+  .btns-google:focus {
+    outline: none; }
 
 .title {
   font-size: 30px;
@@ -7495,12 +7505,14 @@ a {
     -webkit-clip-path: none;
             clip-path: none;
     background: linear-gradient(to right, rgba(255, 255, 0, 0) 0%, yellow 25%, yellow 75%, rgba(255, 255, 0, 0)); }
+  .title--long {
+    width: 500px; }
 
 .fw {
   font-weight: 400; }
 
 .fw500 {
-  font-size: 500px; }
+  font-weight: 500px; }
 
 .fw700 {
   font-weight: 700; }
@@ -7693,6 +7705,19 @@ a {
 
 .portfolio {
   color: #fff; }
+  .portfolio .slick-dots {
+    bottom: 30px; }
+    .portfolio .slick-dots li {
+      border-radius: 50px;
+      border: 1px solid #ffFF00;
+      background: transparent;
+      transition: 0.2s all linear; }
+      .portfolio .slick-dots li:hover {
+        background: #ffFF00; }
+      .portfolio .slick-dots li button:before {
+        opacity: 0; }
+    .portfolio .slick-dots li.slick-active {
+      background: #ffFF00; }
   .portfolio__slide {
     padding: 30px 0;
     background-size: cover;
@@ -7701,3 +7726,98 @@ a {
     .portfolio__slide__name {
       font-size: 30px;
       font-weight: 700; }
+    .portfolio__slide__case__title {
+      margin-bottom: 20px;
+      font-weight: 500;
+      font-size: 22px; }
+    .portfolio__slide__case__item {
+      font-weight: 500;
+      position: relative;
+      padding: 5px 10px; }
+      .portfolio__slide__case__item:before {
+        content: '';
+        position: absolute;
+        z-index: 999;
+        top: 50%;
+        left: -10px;
+        width: 7px;
+        height: 7px;
+        background: #ffFF00;
+        transform: rotateZ(45deg) translateX(-50%); }
+
+.teams__item {
+  padding: 30px; }
+  .teams__item__img {
+    position: relative; }
+    .teams__item__img:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 250px;
+      background-image: linear-gradient(to top, white 0%, rgba(255, 255, 255, 0) 50%);
+      z-index: 9; }
+  .teams__item__name {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 99;
+    text-align: center;
+    font-weight: 700;
+    -webkit-clip-path: polygon(0 0, 98% 2%, 100% 100%, 2% 100%);
+            clip-path: polygon(0 0, 98% 2%, 100% 100%, 2% 100%);
+    font-size: 22px;
+    background: #ffFF00;
+    padding: 5px 0;
+    margin: 0 20px; }
+  .teams__item__position {
+    text-align: center;
+    margin: 5px 0; }
+  .teams__item__social {
+    display: flex;
+    justify-content: center;
+    margin: 10px 0; }
+    .teams__item__social div {
+      margin: 0 10px;
+      font-size: 22px; }
+      .teams__item__social div a:hover {
+        color: #000D80; }
+
+.teams .slick-dots li {
+  border-radius: 50px;
+  border: 1px solid #ffFF00;
+  background: transparent;
+  transition: 0.2s all linear; }
+  .teams .slick-dots li:hover {
+    background: #ffFF00; }
+  .teams .slick-dots li button:before {
+    opacity: 0; }
+
+.teams .slick-dots li.slick-active {
+  background: #ffFF00; }
+
+.contact__item {
+  font-weight: 500;
+  font-size: 22px;
+  margin: 10px 0; }
+  .contact__item a:hover {
+    color: #000D80; }
+
+.input {
+  width: 60%;
+  border: 2px solid #ffFF00;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 20px;
+  margin: 7px 0;
+  transition: 0.2s all linear; }
+  .input:focus, .input:hover {
+    outline: none;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3); }
+
+.footer {
+  padding: 15px 0;
+  background: #ffFF00;
+  text-align: center; }
