@@ -8917,7 +8917,9 @@ a {
 .section {
   padding: 30px 0; }
   .section--first {
-    height: 100vh; }
+    height: 100vh;
+    background-repeat: no-repeat;
+    background-size: cover; }
 
 .btns-first, .btns-second {
   font-size: 20px;
@@ -9005,6 +9007,13 @@ a {
 
 .nav-item {
   padding: 0 10px; }
+
+.navbar-toggler:focus {
+  outline: none; }
+
+.navbar-toggler-icon i {
+  color: #fff;
+  font-size: 22px; }
 
 .first {
   display: flex;
@@ -9286,3 +9295,79 @@ a {
   padding: 15px 0;
   background: #ffFF00;
   text-align: center; }
+
+@media screen and (max-width: 768px) {
+  .first__title {
+    font-size: 60px; }
+    .first__title--control {
+      -webkit-clip-path: none;
+              clip-path: none;
+      background: transparent;
+      color: #ffFF00; }
+  .services__item {
+    padding: 10px 5px; }
+    .services__item__lisp:before {
+      opacity: 0; }
+  .teams__item {
+    padding: 20px 10px; }
+  .input {
+    width: 100%; } }
+
+@media screen and (max-width: 576px) {
+  .section {
+    padding: 10px 0; }
+    .section--first {
+      background-position: center; }
+  .menu {
+    padding: 15px; }
+  .logo {
+    width: 20%; }
+  .navbar-toggler {
+    padding: 0 !important; }
+  .navbar-toggler-icon {
+    width: 25px;
+    height: 25px; }
+  .first__title {
+    font-size: 32px; }
+    .first__title--control {
+      padding-right: 0;
+      padding-left: 7px; }
+  .first__subtitle {
+    font-size: 22px; }
+  .title {
+    font-size: 24px; }
+    .title--long {
+      width: 100%; }
+  .how-title {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 15px; }
+    .how-title__effect {
+      background: transparent;
+      -webkit-clip-path: none;
+              clip-path: none;
+      color: #000; }
+  .kpi > div {
+    margin-bottom: 10px; }
+  .services__item {
+    padding: 20px 5px;
+    height: 380px;
+    margin-bottom: 15px; }
+  .constructor {
+    text-align: center; }
+    .constructor__title {
+      font-size: 24px; }
+  .forms__item {
+    font-size: 18px; }
+  .portfolio__slide {
+    text-align: center;
+    padding-bottom: 50px;
+    height: auto; }
+    .portfolio__slide__case__item:before {
+      opacity: 0; }
+  .portfolio .slick-dots {
+    bottom: 15px; }
+  .btns-google {
+    margin: 20px auto; }
+  .contact {
+    text-align: center; } }
