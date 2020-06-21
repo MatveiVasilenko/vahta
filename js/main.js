@@ -21926,12 +21926,15 @@ $(document).ready(function(){
 $(document).ready(function(){
 	var wnd = $(window)
 	var menu = $('.navbar')
+	var promo = $('.promo')
 
 	wnd.scroll(function (){
 		var top = wnd.scrollTop()
 		bg = top > 50 ? '#000' : 'transparent'
+		opacity = top > 50 ? 1 : 0
 
 		menu.css('backgroundColor', bg)
+		promo.css('opacity', opacity)
 	})
 });
 
@@ -22128,3 +22131,57 @@ wow.init();
         }
     });
 });
+// Time function 
+
+window.onload = () => {
+
+	function getTimeRemaining() {
+		let t = Date.parse(new Date(2020, 8, 1, 0, 0, 0, 0)) - Date.parse(new Date());
+		let seconds = Math.floor((t / 1000) % 60);
+		let minutes = Math.floor((t / 1000 / 60) % 60);
+		let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+		let days = Math.floor(t / (1000 * 60 * 60 * 24));
+		console.log(days)
+		return {
+			'total': t,
+			'days': days,
+			'hours': hours,
+			'minutes': minutes,
+			'seconds': seconds
+		};
+	}
+	function initialClock () {
+		let promoDays = document.getElementById('promoDays')
+		let promoHours = document.getElementById('promoHours')
+		let promoMinutes = document.getElementById('promoMinutes')
+		let promoSec = document.getElementById('promoSec')
+
+		function updateClock () {
+			let time = getTimeRemaining()
+			let second = null
+
+			promoDays.innerHTML = String(time.days)
+			promoHours.innerHTML = String(time.hours)
+			promoMinutes.innerHTML = String(time.minutes)
+			if (String(time.seconds).length === 1) {
+				second = "0" + String(time.seconds)
+			} else {
+				second = String(time.seconds)
+			}
+			promoSec.innerHTML = second
+		}
+		
+		updateClock()
+		setInterval(updateClock, 1000)
+	}
+
+	initialClock()
+
+
+	console.log(time)
+
+}
+
+let times = new Date(2020, 8, 1, 0, 0, 0, 0)
+
+console.log(times.getTime())

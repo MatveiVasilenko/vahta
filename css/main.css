@@ -9296,6 +9296,14 @@ a {
   background: #ffFF00;
   text-align: center; }
 
+.promo {
+  padding: 5px 0;
+  background: #ffFF00;
+  opacity: 0;
+  text-align: center;
+  font-weight: 500;
+  font-size: 22px; }
+
 @media screen and (max-width: 768px) {
   .first__title {
     font-size: 60px; }
