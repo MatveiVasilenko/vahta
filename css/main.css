@@ -8903,7 +8903,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
   box-sizing: border-box; }
 
 html {
-  overflow-x: hidden; }
+  overflow-x: hidden;
+  scroll-behavior: smooth; }
 
 body {
   font-family: "Montserrat", sans-serif;
@@ -8927,6 +8928,8 @@ a {
   padding: 10px 20px;
   border-radius: 15px;
   transition: 0.2s all linear; }
+  .btns-first:hover, .btns-second:hover, .btns-first:focus, .btns-second:focus {
+    outline: none; }
 
 .btns-first {
   color: #000;
@@ -9080,7 +9083,7 @@ a {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
     text-align: center;
     padding: 25px 20px;
-    height: 400px;
+    height: 420px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -9304,6 +9307,62 @@ a {
   font-weight: 500;
   font-size: 22px; }
 
+.modals {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, 100%);
+  width: 600px;
+  height: 300px;
+  background: #fff;
+  border-radius: 20px;
+  opacity: 0;
+  transition: 0.5s all ease-in-out;
+  text-align: center; }
+  .modals__main {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; }
+    .modals__main__title {
+      font-weight: 500;
+      font-size: 30px; }
+  .modals--thankyou {
+    z-index: 99; }
+  .modals--services {
+    height: auto;
+    padding: 30px;
+    text-align: center;
+    z-index: 9; }
+    .modals--services form {
+      width: 80%;
+      margin: 0 auto; }
+      .modals--services form input {
+        width: 100%; }
+    .modals--services__paket {
+      font-weight: 700; }
+    .modals--services__price {
+      font-weight: 700; }
+  .modals__cross {
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    width: 20px;
+    height: 20px;
+    font-size: 22px;
+    cursor: pointer; }
+    .modals__cross i {
+      transform: scale(1);
+      transition: 0.2s all linear; }
+      .modals__cross i:hover, .modals__cross i:focus {
+        transform: scale(1.2); }
+
+.modals-active {
+  transform: translate(-50%, -50%);
+  box-shadow: 0 0 50px 25px rgba(0, 0, 0, 0.5);
+  opacity: 1; }
+
 @media screen and (max-width: 768px) {
   .first__title {
     font-size: 60px; }
@@ -9380,4 +9439,13 @@ a {
   .contact {
     text-align: center; }
   .promo {
-    font-size: 18px; } }
+    font-size: 18px; }
+  .modals {
+    width: 100%;
+    padding: 10px; }
+    .modals__main__title {
+      font-weight: 500;
+      font-size: 24px; }
+    .modals__cross {
+      right: 5px;
+      top: 5px; } }

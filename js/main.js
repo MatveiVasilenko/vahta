@@ -22141,7 +22141,6 @@ window.onload = () => {
 		let minutes = Math.floor((t / 1000 / 60) % 60);
 		let hours = Math.floor((t / (1000 * 60 * 60)) % 24);
 		let days = Math.floor(t / (1000 * 60 * 60 * 24));
-		console.log(days)
 		return {
 			'total': t,
 			'days': days,
@@ -22176,12 +22175,142 @@ window.onload = () => {
 	}
 
 	initialClock()
-
-
-	console.log(time)
-
 }
 
-let times = new Date(2020, 8, 1, 0, 0, 0, 0)
+// MODALS
 
-console.log(times.getTime())
+let thankyouModal = document.getElementById('thankyouModal')
+let [...formName] = document.querySelectorAll('#formName')
+let formPhone = document.getElementById('formPhone')
+for (formItem of formName) {
+	formItem.oninput = function (e) {
+		console.log(e.target.value)
+		if (e.target.value.length < 3) {
+			this.style.borderColor = 'red'
+		} else {
+			this.style.borderColor = '#ffff00'
+		}
+	}	
+}
+
+let servicesModal = document.getElementById('servicesModal')
+let formNameServices = document.getElementById('formNameServices')
+let formPhoneServices = document.getElementById('formPhoneServices')
+let paket = document.querySelector('.modals--services__paket')
+
+
+const servicesHandlerModal = (services) => {
+	servicesModal.classList.add('modals-active')
+	paket.innerHTML = services		
+}
+
+
+
+//Constructor
+
+const [...constructorItem] = document.querySelectorAll('.forms__item')
+const constructorCost = document.getElementById('constructorCost')
+const constructorCostElem = document.querySelector('.constructor__price')
+
+const constructor = [
+	{
+		id: 0,
+		name: 'Базовый функционал',
+		cost: 149,
+		status: true
+	},
+	{
+		id: 1,
+		name: 'Создание индивидуального приложения',
+		cost: 300,
+		status: false
+	},
+	{
+		id: 2,
+		name: 'Новости',
+		cost: 50,
+		status: false
+	},
+	{
+		id: 3,
+		name: 'События',
+		cost: 100,
+		status: false
+	},
+	{
+		id: 4,
+		name: 'Сообщества',
+		cost: 50,
+		status: false
+	},
+	{
+		id: 5,
+		name: 'Модуль аналитики (дополнительные метрики)',
+		cost: 50,
+		status: false
+	},
+	{
+		id: 6,
+		name: 'GEO-информация',
+		cost: 300,
+		status: false
+	},
+	{
+		id: 7,
+		name: 'Внутренний чат',
+		cost: 300,
+		status: false
+	}
+]
+
+for (elem of constructorItem) {
+	elem.addEventListener('change', function () {
+		let idElem = this.getAttribute('data-check')
+		constructor[idElem].status = !constructor[idElem].status
+		constructorCostElem.style.color = 'black'
+		
+		let costPaket = 0
+		costPaket = 0
+		constructor.map((item) => {
+			if (item.status) {
+				costPaket = Number(costPaket) + Number(item.cost)
+			}
+		})
+		constructorCost.innerHTML = costPaket
+	}) 
+}	
+
+let constructorModal = document.getElementById('constructorModal')
+let constructorPrice = document.querySelector('.modals--services__price')
+
+const constructorHandler = () => {
+	if (Number(constructorCost.innerHTML) === 0) {
+		constructorCostElem.style.color = 'red'
+	} else {
+		constructorCostElem.style.color = 'black'
+		constructorPrice.innerHTML = '$' + constructorCost.innerHTML
+		constructorModal.classList.add('modals-active')
+	}
+}
+
+const thankYou = (form) => {
+	form.name.style.borderColor = '#ffff00'		
+	form.phone.style.borderColor = '#ffff00'
+	if (form.name.value.length < 3) {
+		form.name.style.borderColor = 'red'		
+	} else if (form.phone.value.length != 17) {
+		form.phone.style.borderColor = 'red'	
+	} else {
+		form.name.style.borderColor = '#ffff00'		
+		form.phone.style.borderColor = '#ffff00'
+		thankyouModal.classList.add('modals-active')	
+		setTimeout(() => {
+			form.submit()
+		}, 2500)
+	}
+}
+
+const closeModal = () => {
+	servicesModal.classList.remove('modals-active')
+	constructorModal.classList.remove('modals-active')
+}

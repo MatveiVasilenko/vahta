@@ -28,16 +28,16 @@
 				<div class="collapse navbar-collapse" id="navbarNav">
 					<ul class="navbar-nav">
 						<li class="nav-item">
-							<a class="nav-link" href="#">О нас</a>
+							<a class="nav-link" href="#about">О нас</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Портфолио</a>
+							<a class="nav-link" href="#services">Услуги</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Услуги</a>
+							<a class="nav-link" href="#portfolio">Портфолио</a>
 						</li>
 						<li class="nav-item">
-							<a class="nav-link" href="#">Контакты</a>
+							<a class="nav-link" href="#contact">Контакты</a>
 						</li>					
 					</ul>
 				</div>
@@ -50,7 +50,7 @@
 
 	<!-- PROMO - PROMO -->
 	<section class="fixed-bottom promo">
-		<div class="container">
+		<div class="container pb-1">
 			<div>
 				<div>До старта проекта осталось</div>
 				<div> 
@@ -73,7 +73,7 @@
 				<div class="first__subtitle">
 					Ваш бизнес в смартфоне
 				</div>
-				<a href="#" class="btns-first">Попробовать</a>
+				<a href="#services" class="btns-first">Попробовать</a>
 			</div>
 		</div>
 	</section>
@@ -138,7 +138,7 @@
 		</div>
 	</section>
 
-	<section class="section" style="background: linear-gradient(to right, rgba(255,255,0,1) 0%, rgba(255,255,0,1) 40%, rgba(255,255,0,0))">
+	<section id="about" class="section" style="background: linear-gradient(to right, rgba(255,255,0,1) 0%, rgba(255,255,0,1) 40%, rgba(255,255,0,0))">
 		<div class="container">
 			<div class="row align-items-center">
 				<div class="col-md-3 col-8 offset-md-1 offset-2">
@@ -197,7 +197,7 @@
 		</div>
 	</section>
 
-	<section class="section">
+	<section id="services" class="section">
 		<div class="container">
 			<div class="title title--center">
 				Годовая подписка
@@ -208,7 +208,7 @@
 						<div class="col-md-4 wow fadeInLeft">
 							<div class="services__item">
 								<div>
-									<div class="services__item__paket">Standart</div>
+									<div class="services__item__paket">Standard</div>
 									<div class="services__item__lisp">Приложение "VAHTA"</div>
 									<div class="services__item__lisp">CRM система</div>
 									<div class="services__item__lisp">Модуль аналитики</div>
@@ -216,7 +216,7 @@
 								<div>
 									<div>до 15 пользователей</div>
 									<div class="services__item__price">$0</div>
-									<a class="btns-first btns-hover-light" href="#">Заказать</a>
+									<button onclick="servicesHandlerModal('Standard')" class="btns-first btns-hover-light m-0">Заказать</button>
 								</div>
 							</div>
 						</div>
@@ -235,7 +235,7 @@
 										<s style="color: red;">$199</s> $0
 										<span style="font-weight: 400; font-size: 16px;"> (до 1.09.2020)</span>
 									</div>
-									<a class="btns-first btns-hover-light" href="#">Заказать</a>
+									<button onclick="servicesHandlerModal('Business')" class="btns-first btns-hover-light m-0">Заказать</button>
 								</div>
 							</div>
 						</div>
@@ -251,7 +251,7 @@
 								<div>
 									<div>неограничено</div>
 									<div class="services__item__price">$499</div>
-									<a class="btns-first btns-hover-light" href="#">Заказать</a>
+									<button onclick="servicesHandlerModal('Premium')" class="btns-first btns-hover-light m-0">Заказать</button>
 								</div>
 							</div>
 						</div>
@@ -270,47 +270,47 @@
 					<div class="constructor__title">
 						Вы можете собрать свой собственный продукт с дополнительными функциями
 					</div>
-					<div class="constructor__price">Стоимость <span>$1</span></div>
-					<button class="btns-second">Заказать</button>
+					<div class="constructor__price">Стоимость $<span id="constructorCost">149</span></div>
+					<button type="button" onclick="constructorHandler()" class="btns-second">Заказать</button>
 				</div>
 				<div class="col-md-6 offset-md-1">
 					<form class="forms" action="">
-						<label class="forms__item">
-							Базовый функционал (пакет Business)
+						<label class="forms__item" data-check="0">
+							Базовый функционал
 							<input type="checkbox" checked>
 							<span class="checkmark"></span>
 						</label>
-						<label class="forms__item">
+						<label class="forms__item" data-check="1">
 							Создание индивидуального приложения
 							<input type="checkbox" >
 							<span class="checkmark"></span>
 						</label>
-						<label class="forms__item">
+						<label class="forms__item" data-check="2">
 							Новости
 							<input type="checkbox">
 							<span class="checkmark"></span>
 						</label>
-						<label class="forms__item">
+						<label class="forms__item" data-check="3">
 							События
 							<input type="checkbox">
 							<span class="checkmark"></span>
 						</label>
-						<label class="forms__item">
+						<label class="forms__item" data-check="4">
 							Сообщества
 							<input type="checkbox">
 							<span class="checkmark"></span>
 						</label>
-						<label class="forms__item">
+						<label class="forms__item" data-check="5">
 							Модуль аналитики (доп. метрики)
 							<input type="checkbox">
 							<span class="checkmark"></span>
 						</label>
-						<label class="forms__item">
+						<label class="forms__item" data-check="6">
 							GEO-информация
 							<input type="checkbox">
 							<span class="checkmark"></span>
 						</label>
-						<label class="forms__item">
+						<label class="forms__item" data-check="7">
 							Внутренний чат
 							<input type="checkbox">
 							<span class="checkmark"></span>
@@ -320,7 +320,7 @@
 			</div>
 		</div>
 	</section>
-	<section>
+	<section id="portfolio">
 		<div class="title title--center my-1">Работы, которыми мы гордимся</div>
 		<div class="portfolio">
 			<div class="portfolio__slide" style="background-image: linear-gradient(to top, rgba(0,0,0, 0.8), rgba(0,0,0, 0.8)), url('img/portfolio/portfolio1.jpg');">
@@ -447,7 +447,7 @@
 		</div>
 	</section>
 
-	<section class="section">
+	<section id="contact" class="section">
 		<div class="container">
 			<div class="row align-items-center contact">
 				<div class="col-md-6 wow fadeInLeft">
@@ -470,11 +470,11 @@
 						</a>
 					</div>
 					<div>Хотите мы свяжемся с Вами в течении часа?</div>
-					<form class="my-3" action="">
-						<input class="input" type="text" name="name" placeholder="Как к Вам обращаться?">
-						<input class="input" type="text" name="phone" placeholder="Ваш телефон">
+					<form id="form" class="my-3" action="">
+						<input id="formName" class="input" type="text" name="name" placeholder="Как к Вам обращаться?">
+						<input id="formPhone" class="input" type="text" name="phone" placeholder="Ваш телефон">
 						<div>
-							<button class="btns-first btns-first--form">Отправить</button>
+							<button onclick="thankYou(form)" type="button" class="btns-first btns-first--form">Отправить</button>
 						</div>
 					</form>
 				</div>
@@ -487,6 +487,56 @@
 		</div>
 	</section>
 </main>
+
+<!-- Modal -->
+<!-- Thank you -->
+<div id="thankyouModal" class="modals modals--thankyou">
+	<div class="modals__main">
+		<div class="modals__main__title">Спасибо за вашу заявку!</div>
+		<div>Мы свяжемся с Вами в ближайшее время.</div>
+	</div>
+</div>
+
+<!-- Services -->
+<div id="servicesModal" class="modals modals--services">
+	<div class="modals__main">
+		<div class="modals__main__title">Спасибо за вашу заявку!</div>
+		<div>Вы выбрали пакет <span class="modals--services__paket" ></span></div>
+		<div>Проект "VAHTA" запускается <span class="fw700">1 сентября</span></div>
+		<div>Чтобы оформить предзаказ заполните Ваши данные и наш менеджер свяжется с Вами в ближайшее время</div>
+		<form id="formServices" class="my-3" action="">
+			<input id="formName" class="input" type="text" name="name" placeholder="Как к Вам обращаться?">
+			<input id="formPhoneServices" class="input" type="text" name="phone" placeholder="Ваш телефон">
+			<div>
+				<button onclick="thankYou(formServices)" type="button" class="btns-first btns-first--form">Отправить</button>
+			</div>
+		</form>
+	</div>
+	<div class="modals__cross" onclick="closeModal()">
+		<i class="fas fa-times"></i>
+	</div>
+</div>
+
+<!-- Constructor -->
+<div id="constructorModal" class="modals modals--services">
+	<div class="modals__main">
+		<div class="modals__main__title">Вы собрали свой уникальный продукт!</div>
+		<div>На сумму <span class="modals--services__price"></span></div>
+		<div>Проект "VAHTA" запускается <span class="fw700">1 сентября</span></div>
+		<div>Оформив предзаказ - вы получаете базовый функционал абсолютно <span class="fw700">бесплатно</span></div>
+		<div>Чтобы оформить предзаказ заполните Ваши данные и наш менеджер свяжется с Вами в ближайшее время</div>
+		<form id="formConstructor" class="my-3" action="">
+			<input id="formName" class="input" type="text" name="name" placeholder="Как к Вам обращаться?">
+			<input class="input" type="text" name="phone" placeholder="Ваш телефон">
+			<div>
+				<button onclick="thankYou(formConstructor)" type="button" class="btns-first btns-first--form">Отправить</button>
+			</div>
+		</form>
+	</div>
+	<div class="modals__cross" onclick="closeModal()">
+		<i class="fas fa-times"></i>
+	</div>
+</div>
 
 <footer class="footer">
 	<div class="container">
