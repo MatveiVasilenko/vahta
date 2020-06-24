@@ -9441,11 +9441,12 @@ a {
   .promo {
     font-size: 18px; }
   .modals {
-    width: 100%;
+    width: 95%;
     padding: 10px; }
     .modals__main__title {
       font-weight: 500;
-      font-size: 24px; }
+      font-size: 24px;
+      padding: 0 15px; }
     .modals__cross {
       right: 5px;
       top: 5px; } }
